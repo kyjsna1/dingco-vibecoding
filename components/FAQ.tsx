@@ -26,7 +26,7 @@ export default function FAQ() {
     },
     {
       q: "에러가 끝없이 발생하고 AI가 엉뚱한 코드를 짜면 어떻게 하나요?",
-      a: "‘맥락 오염(Context Poisoning)’ 현상 때문입니다. 이럴 때는 당황하지 마시고 딩코의 룰대로 1) Git으로 이전 세이브포인트로 되돌아가거나, 2) 새 채팅 창을 열어 가장 최근에 잘 작동하던 파일만 지정한 뒤 한 번에 한 가지 문제만 단순하게 다시 지시하면 95% 이상 즉시 해결됩니다.",
+      a: "‘맥락 오염(Context Poisoning)’ 현상 때문입니다. 이럴 때는 당황하지 마시고 바이브웨이브의 룰대로 1) Git으로 이전 세이브포인트로 되돌아가거나, 2) 새 채팅 창을 열어 가장 최근에 잘 작동하던 파일만 지정한 뒤 한 번에 한 가지 문제만 단순하게 다시 지시하면 95% 이상 즉시 해결됩니다.",
     },
     {
       q: "바이브코딩으로 만든 사이트로 실제 창업이나 수익화가 가능한가요?",
@@ -39,12 +39,12 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="py-24 relative bg-[#090b14]/50 border-t border-white/5">
+    <section id="faq" className="py-24 relative bg-[#040816]/60 border-t border-blue-500/10 overflow-hidden">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-950/60 border border-indigo-500/30 text-indigo-300 text-xs font-semibold uppercase tracking-wider mb-4">
-            <HelpCircle className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-950/70 border border-blue-500/30 text-cyan-300 text-xs font-semibold uppercase tracking-wider mb-4 shadow-[0_0_15px_rgba(6,182,212,0.25)]">
+            <HelpCircle className="w-3.5 h-3.5 text-cyan-400" />
             <span>Got Questions?</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-6">
@@ -62,14 +62,14 @@ export default function FAQ() {
             return (
               <div
                 key={idx}
-                className="rounded-2xl border border-white/10 bg-[#0d101d] overflow-hidden transition-all duration-200"
+                className="rounded-2xl border border-blue-500/20 bg-[#061026] overflow-hidden transition-all duration-200"
               >
                 <button
                   onClick={() => toggle(idx)}
-                  className="w-full px-6 py-5 flex items-center justify-between text-left text-white font-semibold text-sm sm:text-base hover:bg-white/[0.02] transition cursor-pointer"
+                  className="w-full px-6 py-5 flex items-center justify-between text-left text-white font-semibold text-sm sm:text-base hover:bg-blue-600/5 transition cursor-pointer"
                 >
                   <span className="flex items-center gap-3">
-                    <span className="w-6 h-6 rounded-full bg-purple-600/30 text-purple-300 border border-purple-500/40 text-xs flex items-center justify-center font-bold">
+                    <span className="w-6 h-6 rounded-full bg-blue-600/30 text-cyan-300 border border-cyan-400/40 text-xs flex items-center justify-center font-bold">
                       Q
                     </span>
                     {faq.q}
@@ -82,7 +82,7 @@ export default function FAQ() {
                 </button>
 
                 {isOpen && (
-                  <div className="px-6 pb-6 pt-1 text-slate-300 text-xs sm:text-sm leading-relaxed border-t border-white/5 animate-fadeIn">
+                  <div className="px-6 pb-6 pt-1 text-slate-300 text-xs sm:text-sm leading-relaxed border-t border-blue-500/10 animate-fadeIn">
                     <div className="pl-9">{faq.a}</div>
                   </div>
                 )}

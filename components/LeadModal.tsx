@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import confetti from "canvas-confetti";
-import { Sparkles, X, CheckCircle, FileText, ArrowRight, Download } from "lucide-react";
+import { Sparkles, X, CheckCircle, FileText, Download } from "lucide-react";
 
 interface LeadModalProps {
   isOpen: boolean;
@@ -22,16 +22,16 @@ export default function LeadModal({ isOpen, onClose }: LeadModalProps) {
 
     setIsSubmitted(true);
     confetti({
-      particleCount: 100,
-      spread: 70,
+      particleCount: 110,
+      spread: 75,
       origin: { y: 0.6 },
-      colors: ["#a855f7", "#06b6d4", "#f43f5e", "#fbbf24"],
+      colors: ["#2563eb", "#06b6d4", "#38bdf8", "#60a5fa", "#ffffff"],
     });
   };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fadeIn">
-      <div className="relative max-w-lg w-full rounded-3xl bg-[#0e111d] border border-purple-500/40 p-6 sm:p-8 shadow-[0_0_50px_rgba(168,85,247,0.3)]">
+      <div className="relative max-w-lg w-full rounded-3xl bg-[#061129] border border-cyan-400/40 p-6 sm:p-8 shadow-[0_0_60px_rgba(37,99,235,0.4)]">
         {/* Close Button */}
         <button
           onClick={onClose}
@@ -43,7 +43,7 @@ export default function LeadModal({ isOpen, onClose }: LeadModalProps) {
         {!isSubmitted ? (
           <div>
             <div className="flex items-center gap-2 mb-3">
-              <span className="p-2 rounded-xl bg-purple-600/20 border border-purple-500/40 text-purple-300">
+              <span className="p-2 rounded-xl bg-blue-600/20 border border-cyan-400/40 text-cyan-300">
                 <FileText className="w-5 h-5 text-cyan-300" />
               </span>
               <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">
@@ -52,7 +52,7 @@ export default function LeadModal({ isOpen, onClose }: LeadModalProps) {
             </div>
 
             <h3 className="text-xl sm:text-2xl font-extrabold text-white mb-2">
-              딩코의 바이브코딩 시크릿 치트시트
+              바이브웨이브 시크릿 치트시트
             </h3>
             <p className="text-slate-300 text-xs sm:text-sm leading-relaxed mb-6">
               Cursor/Claude 즉시 복붙 프롬프트 30선과 5분 만에 끝내는 Vercel 배포 체크리스트 PDF를 무료로 보내드립니다.
@@ -68,8 +68,8 @@ export default function LeadModal({ isOpen, onClose }: LeadModalProps) {
                   required
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  placeholder="예: 딩코러버"
-                  className="w-full px-4 py-3 rounded-xl bg-black/60 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-purple-400 text-sm"
+                  placeholder="예: 웨이브코더"
+                  className="w-full px-4 py-3 rounded-xl bg-[#030914] border border-blue-500/30 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 text-sm"
                 />
               </div>
 
@@ -83,15 +83,15 @@ export default function LeadModal({ isOpen, onClose }: LeadModalProps) {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="name@example.com"
-                  className="w-full px-4 py-3 rounded-xl bg-black/60 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-purple-400 text-sm"
+                  className="w-full px-4 py-3 rounded-xl bg-[#030914] border border-blue-500/30 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 text-sm"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full py-3.5 rounded-xl bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-500 hover:to-cyan-500 text-white font-bold text-sm shadow-[0_0_25px_rgba(168,85,247,0.4)] transition cursor-pointer flex items-center justify-center gap-2"
+                className="w-full py-3.5 rounded-xl bg-gradient-to-r from-blue-600 via-sky-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-bold text-sm shadow-[0_0_25px_rgba(6,182,212,0.45)] transition cursor-pointer flex items-center justify-center gap-2"
               >
-                <Sparkles className="w-4 h-4 text-amber-300" />
+                <Sparkles className="w-4 h-4 text-cyan-200" />
                 <span>무료 PDF 치트시트 즉시 받기</span>
               </button>
             </form>
@@ -118,7 +118,7 @@ export default function LeadModal({ isOpen, onClose }: LeadModalProps) {
                   alert("🎉 치트시트 열람 페이지로 이동합니다!");
                   onClose();
                 }}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs shadow-lg shadow-purple-900/40 cursor-pointer"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-lg shadow-blue-900/40 cursor-pointer"
               >
                 <Download className="w-4 h-4" />
                 <span>PDF 치트시트 지금 바로 열람하기</span>

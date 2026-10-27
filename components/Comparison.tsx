@@ -1,6 +1,6 @@
 "use client";
 
-import { XCircle, CheckCircle2, Zap, Brain, Sparkles, Code, Compass, ArrowRight } from "lucide-react";
+import { XCircle, CheckCircle2, Brain, Sparkles, Compass } from "lucide-react";
 
 export default function Comparison() {
   const comparisons = [
@@ -17,7 +17,7 @@ export default function Comparison() {
     {
       title: "디자인 & 스타일링",
       traditional: "복잡한 CSS와 미디어 쿼리, 픽셀 단위 정렬로 며칠 밤을 지새움",
-      vibe: "'네온 다크모드, 글래스모피즘' 한마디로 세련된 Tailwind UI 즉각 구현",
+      vibe: "'네온 블루 다크모드, 글래스모피즘' 한마디로 세련된 Tailwind UI 즉각 구현",
     },
     {
       title: "제품 제작 속도",
@@ -32,18 +32,18 @@ export default function Comparison() {
   ];
 
   return (
-    <section id="about" className="py-24 relative">
+    <section id="about" className="py-24 relative overflow-hidden">
       {/* Background Decor */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-xs font-semibold uppercase tracking-wider mb-4">
-            <Compass className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-950/70 border border-blue-500/30 text-cyan-300 text-xs font-semibold uppercase tracking-wider mb-4 shadow-[0_0_15px_rgba(6,182,212,0.25)]">
+            <Compass className="w-3.5 h-3.5 text-cyan-400" />
             <span>The Paradigm Shift</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-6">
             왜 지금, 전 세계가 <br className="hidden sm:inline" />
-            <span className="bg-gradient-to-r from-cyan-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-400 via-sky-300 to-cyan-300 bg-clip-text text-transparent">
               ‘바이브코딩’
             </span>
             에 열광할까요?
@@ -51,19 +51,19 @@ export default function Comparison() {
           <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
             전 테슬라 AI 디렉터 <strong>안드레 카파시(Andrej Karpathy)</strong>가 예견한 미래.
             <br />
-            코딩의 본질은 이제 <strong>&apos;문법 타이핑&apos;</strong>이 아니라 <strong>&apos;상상력과 의도의 디렉팅&apos;</strong>입니다.
+            코딩의 본질은 이제 <strong>&apos;문법 타이핑&apos;</strong>이 아니라 <strong>&apos;상상력과 파도처럼 흐르는 의도의 디렉팅&apos;</strong>입니다.
           </p>
         </div>
 
         {/* Karpathy Quote Card */}
         <div className="max-w-4xl mx-auto mb-16 relative">
-          <div className="p-8 rounded-3xl bg-gradient-to-r from-purple-900/30 via-slate-900/60 to-cyan-900/30 border border-purple-500/30 backdrop-blur-xl relative overflow-hidden shadow-2xl">
+          <div className="p-8 rounded-3xl bg-gradient-to-r from-blue-950/40 via-[#07132c]/70 to-cyan-950/30 border border-blue-500/30 backdrop-blur-xl relative overflow-hidden shadow-[0_0_50px_rgba(37,99,235,0.25)]">
             <div className="absolute top-0 right-0 p-8 text-8xl font-serif text-white/5 pointer-events-none">
               “
             </div>
             <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 relative z-10">
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-purple-600 to-cyan-500 p-0.5 shrink-0 shadow-lg shadow-purple-500/30">
-                <div className="w-full h-full bg-[#0d101d] rounded-2xl flex items-center justify-center">
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-blue-600 to-cyan-400 p-0.5 shrink-0 shadow-lg shadow-blue-500/40">
+                <div className="w-full h-full bg-[#050e24] rounded-2xl flex items-center justify-center">
                   <Brain className="w-8 h-8 text-cyan-400" />
                 </div>
               </div>
@@ -76,7 +76,7 @@ export default function Comparison() {
                   &ldquo;나는 더 이상 코드를 직접 타이핑하지 않는다. 그저 눈으로 보고, 원하는 걸 말하고, 실행하고, 붙여넣는다. 
                   그리고 그것들은 놀랍게도 대부분 잘 돌아간다.&rdquo;
                 </p>
-                <div className="text-xs text-purple-300 font-semibold flex items-center gap-2">
+                <div className="text-xs text-cyan-300 font-semibold flex items-center gap-2">
                   <span>— Andrej Karpathy (전 테슬라 AI 총괄, OpenAI 공동 창립자)</span>
                 </div>
               </div>
@@ -113,20 +113,20 @@ export default function Comparison() {
             </div>
           </div>
 
-          {/* Vibe Coding Way */}
-          <div className="rounded-3xl bg-gradient-to-b from-purple-950/30 to-cyan-950/20 border border-purple-500/40 p-6 sm:p-8 backdrop-blur-md relative shadow-[0_0_40px_rgba(168,85,247,0.15)]">
-            <div className="absolute -top-3 right-6 px-3 py-1 rounded-full bg-gradient-to-r from-purple-600 to-cyan-500 text-white font-bold text-xs shadow-lg flex items-center gap-1.5">
-              <Sparkles className="w-3.5 h-3.5 text-amber-300" />
-              딩코딩코 추천
+          {/* Vibe Coding Way - VibeWave */}
+          <div className="rounded-3xl bg-gradient-to-b from-blue-950/40 via-[#071536]/50 to-cyan-950/30 border border-cyan-500/40 p-6 sm:p-8 backdrop-blur-md relative shadow-[0_0_40px_rgba(6,182,212,0.2)]">
+            <div className="absolute -top-3 right-6 px-3 py-1 rounded-full bg-gradient-to-r from-blue-600 via-sky-600 to-cyan-500 text-white font-bold text-xs shadow-lg flex items-center gap-1.5">
+              <Sparkles className="w-3.5 h-3.5 text-cyan-200" />
+              바이브웨이브 방식
             </div>
 
-            <div className="flex items-center gap-3 mb-6 pb-4 border-b border-purple-500/20">
-              <div className="w-10 h-10 rounded-xl bg-purple-500/20 border border-purple-500/40 flex items-center justify-center text-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.4)]">
+            <div className="flex items-center gap-3 mb-6 pb-4 border-b border-blue-500/25">
+              <div className="w-10 h-10 rounded-xl bg-blue-500/20 border border-blue-400/40 flex items-center justify-center text-cyan-400 shadow-[0_0_20px_rgba(6,182,212,0.4)]">
                 <CheckCircle2 className="w-6 h-6 text-cyan-400" />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-white">딩코딩코 바이브코딩</h3>
-                <p className="text-xs text-purple-300 font-medium">아이디어와 감각으로 이끄는 AI 페어 개발</p>
+                <h3 className="text-lg font-bold text-white">바이브웨이브 바이브코딩</h3>
+                <p className="text-xs text-cyan-300 font-medium">아이디어와 감각으로 이끄는 AI 페어 개발</p>
               </div>
             </div>
 
@@ -135,7 +135,7 @@ export default function Comparison() {
                 <div key={idx} className="flex items-start gap-3 text-slate-200 text-sm">
                   <span className="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_8px_#22d3ee] mt-1.5 shrink-0" />
                   <div>
-                    <strong className="text-purple-300 block text-xs mb-1 font-semibold flex items-center gap-1.5">
+                    <strong className="text-cyan-300 block text-xs mb-1 font-semibold flex items-center gap-1.5">
                       {item.title}
                     </strong>
                     <span className="leading-snug text-slate-200 font-medium">{item.vibe}</span>

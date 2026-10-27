@@ -18,18 +18,18 @@ export default function Home() {
   const [isCheatSheetOpen, setIsCheatSheetOpen] = useState(false);
 
   return (
-    <div className="relative min-h-screen bg-[#08090e] text-slate-100 flex flex-col selection:bg-purple-600 selection:text-white">
-      {/* Soundwave / Vibe Float Indicator at bottom right */}
-      <div className="fixed bottom-6 right-6 z-40 hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-full bg-[#121626]/90 border border-purple-500/40 backdrop-blur-xl shadow-[0_0_20px_rgba(168,85,247,0.3)]">
+    <div className="relative min-h-screen bg-[#030712] text-slate-100 flex flex-col selection:bg-blue-600 selection:text-white">
+      {/* Soundwave / Vibe Float Indicator at bottom right - Electric Blue Theme */}
+      <div className="fixed bottom-6 right-6 z-40 hidden sm:flex items-center gap-2.5 px-3.5 py-2 rounded-full bg-[#061330]/90 border border-blue-500/40 backdrop-blur-xl shadow-[0_0_25px_rgba(37,99,235,0.45)]">
         <div className="flex items-end gap-0.5 h-4">
-          <span className="w-1 bg-purple-400 rounded-full animate-soundwave-1" />
-          <span className="w-1 bg-cyan-400 rounded-full animate-soundwave-2" />
-          <span className="w-1 bg-fuchsia-400 rounded-full animate-soundwave-3" />
+          <span className="w-1 bg-cyan-400 rounded-full animate-soundwave-1" />
+          <span className="w-1 bg-sky-400 rounded-full animate-soundwave-2" />
+          <span className="w-1 bg-blue-400 rounded-full animate-soundwave-3" />
           <span className="w-1 bg-indigo-400 rounded-full animate-soundwave-4" />
-          <span className="w-1 bg-rose-400 rounded-full animate-soundwave-5" />
+          <span className="w-1 bg-teal-300 rounded-full animate-soundwave-5" />
         </div>
-        <span className="text-[11px] font-mono font-bold text-slate-300">
-          DINGCO VIBE ACTIVE
+        <span className="text-[11px] font-mono font-bold text-cyan-300">
+          VIBEWAVE ACTIVE
         </span>
       </div>
 

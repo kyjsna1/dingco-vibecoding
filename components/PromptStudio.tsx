@@ -7,12 +7,10 @@ import {
   Wand2, 
   Copy, 
   Check, 
-  Layers, 
-  Palette, 
   Cpu, 
-  Terminal, 
   RefreshCw,
-  FolderGit2
+  FolderGit2,
+  Waves
 } from "lucide-react";
 
 interface CategoryOption {
@@ -43,23 +41,23 @@ const CATEGORIES: CategoryOption[] = [
   },
   {
     id: "booking",
-    name: "☕ 예약 & 인터랙티브 웹",
-    desc: "카페, 공방, 미용실 실시간 좌석 예약",
-    defaultIdea: "고양이 북카페 '달빛 서재'의 실시간 창가석 예약 및 메뉴 주문 웹",
+    name: "🌊 예약 & 인터랙티브 웹",
+    desc: "서핑 스쿨, 카페, 공방 실시간 좌석 예약",
+    defaultIdea: "오션 서핑 클럽 '블루 웨이브'의 실시간 강습 예약 및 파도 상태 웹",
   },
   {
     id: "portfolio",
     name: "🎨 크리에이터 포트폴리오",
     desc: "인터랙티브 갤러리, 프로젝트 쇼케이스",
-    defaultIdea: "사이버펑크 느낌의 3D 모션 그래픽 디자이너 인터랙티브 쇼케이스",
+    defaultIdea: "사이버펑크 네온 블루 감성의 3D 모션 그래픽 디자이너 쇼케이스",
   },
 ];
 
 const VIBES = [
   {
-    id: "cyberpunk",
-    name: "💜 사이버펑크 네온 다크",
-    desc: "바이올렛/시안 네온 글로우, 딥블랙 배경, 하이테크 느낌",
+    id: "deep-ocean",
+    name: "🌊 딥 오션 & 일렉트릭 블루",
+    desc: "사파이어 블루/시안 글로우, 미드나잇 블랙 배경, 하이테크 느낌",
   },
   {
     id: "apple-glass",
@@ -69,18 +67,18 @@ const VIBES = [
   {
     id: "warm-pastel",
     name: "🌿 따뜻하고 친근한 감성",
-    desc: "부드러운 크림/파스텔톤, 둥근 모서리, 포근한 일러스트 감성",
+    desc: "부드러운 크림/스카이블루톤, 둥근 모서리, 포근한 일러스트 감성",
   },
   {
     id: "fintech",
     name: "⚡ 하이테크 B2B 모던",
-    desc: "슬레이트 블루, 신뢰감 주는 그리드, 깔끔한 데이터 차트",
+    desc: "네이비 슬레이트, 신뢰감 주는 그리드, 깔끔한 데이터 차트",
   },
 ];
 
 export default function PromptStudio() {
   const [selectedCategory, setSelectedCategory] = useState<string>("saas");
-  const [selectedVibe, setSelectedVibe] = useState<string>("cyberpunk");
+  const [selectedVibe, setSelectedVibe] = useState<string>("deep-ocean");
   const [userIdea, setUserIdea] = useState<string>(
     "1인 창업가를 위한 AI 자동 블로그 글 작성 및 SEO 최적화 서비스"
   );
@@ -137,7 +135,7 @@ ${features.length + 1}. 플레이스홀더 텍스트 대신 실제 프로덕션 
 ${features.length + 2}. 에러 방지를 위해 TypeScript strict mode를 준수하고 하이드레이션 오류가 발생하지 않도록 클라이언트 사이드 상태 안전하게 처리
 
 [구현 가이드라인]
-1. 단 하나의 지루한 MVP가 아니라 사용자가 접속하자마자 "와!" 하고 감탄할 수 있는 고급스러운 글래스모피즘과 마이크로 인터랙션을 넣어줘.
+1. 단 하나의 지루한 MVP가 아니라 사용자가 접속하자마자 "와!" 하고 감탄할 수 있는 고급스러운 글래스모피즘과 블루 글로우 마이크로 인터랙션을 넣어줘.
 2. 컴포넌트는 단일 책임 원칙에 따라 분리하고, 즉시 실행 가능한 완전한 코드(생략 없는 전체 코드)를 작성해줘.`;
 
       const techStack = [
@@ -161,7 +159,7 @@ components/
       const stepGuide = [
         "1단계: Cursor 또는 Claude에 위 프롬프트를 복사하여 붙여넣습니다.",
         "2단계: 터미널에서 `npm run dev` 실행 후 브라우저(localhost:3000)를 띄워 확인합니다.",
-        "3단계: 필요한 세부 디자인이나 문구를 한국어로 '이 버튼 색상을 더 밝게 해줘'처럼 피드백합니다.",
+        "3단계: 필요한 세부 디자인이나 문구를 한국어로 '이 버튼 색상을 더 밝은 네온 시안으로 해줘'처럼 피드백합니다.",
       ];
 
       setGeneratedResult({
@@ -173,12 +171,12 @@ components/
 
       setIsGenerating(false);
 
-      // Fire celebratory confetti!
+      // Fire celebratory Ocean Blue confetti!
       confetti({
-        particleCount: 70,
-        spread: 60,
+        particleCount: 80,
+        spread: 65,
         origin: { y: 0.7 },
-        colors: ["#a855f7", "#06b6d4", "#ec4899", "#3b82f6"],
+        colors: ["#2563eb", "#06b6d4", "#38bdf8", "#60a5fa", "#ffffff"],
       });
     }, 600);
   };
@@ -193,20 +191,20 @@ components/
   return (
     <section id="prompt-studio" className="py-24 relative overflow-hidden">
       {/* Background Neon Orbs */}
-      <div className="absolute top-1/2 left-0 w-96 h-96 bg-purple-600/10 blur-[130px] rounded-full pointer-events-none -z-10" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-600/10 blur-[130px] rounded-full pointer-events-none -z-10" />
+      <div className="absolute top-1/2 left-0 w-96 h-96 bg-blue-600/15 blur-[140px] rounded-full pointer-events-none -z-10" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-600/15 blur-[140px] rounded-full pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-purple-500/20 to-cyan-500/20 border border-purple-500/30 text-purple-300 text-xs font-semibold uppercase tracking-wider mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-500/30 text-cyan-300 text-xs font-semibold uppercase tracking-wider mb-4 shadow-[0_0_15px_rgba(6,182,212,0.25)]">
             <Wand2 className="w-3.5 h-3.5 text-cyan-400" />
             <span>Interactive Tool</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-6">
-            딩코의{" "}
-            <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
-              바이브 프롬프트 생성기
+            바이브웨이브{" "}
+            <span className="bg-gradient-to-r from-blue-400 via-sky-300 to-cyan-300 bg-clip-text text-transparent">
+              프롬프트 생성기
             </span>
           </h2>
           <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
@@ -216,12 +214,12 @@ components/
         </div>
 
         {/* Studio Workspace */}
-        <div className="max-w-5xl mx-auto rounded-3xl bg-gradient-to-b from-purple-500/20 via-slate-800/10 to-cyan-500/10 p-1 border border-white/10 shadow-2xl">
-          <div className="rounded-[22px] bg-[#0c101d]/95 p-6 sm:p-10 backdrop-blur-xl">
+        <div className="max-w-5xl mx-auto rounded-3xl bg-gradient-to-b from-blue-500/30 via-slate-800/10 to-cyan-500/20 p-1 border border-blue-500/30 shadow-2xl">
+          <div className="rounded-[22px] bg-[#061026]/95 p-6 sm:p-10 backdrop-blur-xl">
             {/* Step 1: Category */}
             <div className="mb-8">
               <label className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3 flex items-center gap-2">
-                <span className="w-5 h-5 rounded-full bg-purple-600 text-white flex items-center justify-center text-[10px] font-mono">
+                <span className="w-5 h-5 rounded-full bg-blue-600 text-white flex items-center justify-center text-[10px] font-mono">
                   1
                 </span>
                 프로젝트 카테고리 선택
@@ -235,8 +233,8 @@ components/
                       onClick={() => handleCategoryChange(cat)}
                       className={`p-3.5 rounded-xl border text-left transition-all duration-200 cursor-pointer ${
                         isSelected
-                          ? "bg-purple-950/60 border-purple-500 text-white shadow-[0_0_15px_rgba(168,85,247,0.3)]"
-                          : "bg-white/[0.02] border-white/10 hover:border-white/20 text-slate-300"
+                          ? "bg-blue-950/70 border-cyan-400 text-white shadow-[0_0_20px_rgba(6,182,212,0.35)]"
+                          : "bg-blue-950/20 border-blue-500/20 hover:border-blue-400/40 text-slate-300"
                       }`}
                     >
                       <div className="text-xs font-bold mb-0.5">{cat.name}</div>
@@ -250,7 +248,7 @@ components/
             {/* Step 2: Design Vibe */}
             <div className="mb-8">
               <label className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3 flex items-center gap-2">
-                <span className="w-5 h-5 rounded-full bg-purple-600 text-white flex items-center justify-center text-[10px] font-mono">
+                <span className="w-5 h-5 rounded-full bg-blue-600 text-white flex items-center justify-center text-[10px] font-mono">
                   2
                 </span>
                 디자인 바이브(분위기) 선택
@@ -264,8 +262,8 @@ components/
                       onClick={() => setSelectedVibe(vibe.id)}
                       className={`p-3.5 rounded-xl border text-left transition-all duration-200 cursor-pointer ${
                         isSelected
-                          ? "bg-cyan-950/60 border-cyan-400 text-white shadow-[0_0_15px_rgba(6,182,212,0.3)]"
-                          : "bg-white/[0.02] border-white/10 hover:border-white/20 text-slate-300"
+                          ? "bg-cyan-950/70 border-cyan-400 text-white shadow-[0_0_20px_rgba(6,182,212,0.35)]"
+                          : "bg-blue-950/20 border-blue-500/20 hover:border-blue-400/40 text-slate-300"
                       }`}
                     >
                       <div className="text-xs font-bold text-cyan-300 mb-0.5">{vibe.name}</div>
@@ -279,7 +277,7 @@ components/
             {/* Step 3: Core Idea Input */}
             <div className="mb-8">
               <label className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3 flex items-center gap-2">
-                <span className="w-5 h-5 rounded-full bg-purple-600 text-white flex items-center justify-center text-[10px] font-mono">
+                <span className="w-5 h-5 rounded-full bg-blue-600 text-white flex items-center justify-center text-[10px] font-mono">
                   3
                 </span>
                 내 아이디어 한 줄 요약
@@ -290,7 +288,7 @@ components/
                   value={userIdea}
                   onChange={(e) => setUserIdea(e.target.value)}
                   placeholder="예: 반려동물 산책 경로를 지도에 그리고 동네 강아지 친구를 매칭해주는 웹앱"
-                  className="w-full px-4 py-3.5 rounded-xl bg-black/60 border border-purple-500/30 text-white placeholder-slate-500 focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-500/20 text-sm font-medium transition"
+                  className="w-full px-4 py-3.5 rounded-xl bg-[#030914] border border-blue-500/30 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500/20 text-sm font-medium transition"
                 />
               </div>
             </div>
@@ -298,7 +296,7 @@ components/
             {/* Step 4: Extra Features Checkboxes */}
             <div className="mb-8">
               <label className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3 flex items-center gap-2">
-                <span className="w-5 h-5 rounded-full bg-purple-600 text-white flex items-center justify-center text-[10px] font-mono">
+                <span className="w-5 h-5 rounded-full bg-blue-600 text-white flex items-center justify-center text-[10px] font-mono">
                   4
                 </span>
                 포함하고 싶은 핵심 요소 (선택)
@@ -319,8 +317,8 @@ components/
                       onClick={() => toggleFeature(feat)}
                       className={`px-3 py-1.5 rounded-lg text-xs font-medium border transition-all cursor-pointer ${
                         active
-                          ? "bg-purple-600/30 border-purple-400 text-purple-200"
-                          : "bg-white/5 border-white/10 text-slate-400 hover:text-slate-200"
+                          ? "bg-blue-600/40 border-cyan-400 text-cyan-200 shadow-sm"
+                          : "bg-blue-950/30 border-blue-500/20 text-slate-400 hover:text-slate-200"
                       }`}
                     >
                       {active ? "✓ " : "+ "}
@@ -335,7 +333,7 @@ components/
             <button
               onClick={generatePrompt}
               disabled={isGenerating}
-              className="w-full py-4 rounded-xl bg-gradient-to-r from-violet-600 via-fuchsia-600 to-cyan-500 hover:from-violet-500 hover:to-cyan-400 text-white font-bold text-base shadow-[0_0_30px_rgba(168,85,247,0.4)] hover:shadow-[0_0_40px_rgba(6,182,212,0.5)] transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+              className="w-full py-4 rounded-xl bg-gradient-to-r from-blue-600 via-sky-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-bold text-base shadow-[0_0_35px_rgba(37,99,235,0.45)] hover:shadow-[0_0_45px_rgba(6,182,212,0.6)] transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
             >
               {isGenerating ? (
                 <>
@@ -344,18 +342,18 @@ components/
                 </>
               ) : (
                 <>
-                  <Sparkles className="w-5 h-5 text-amber-300" />
-                  <span>✨ 딩코의 마스터 바이브 프롬프트 생성하기</span>
+                  <Sparkles className="w-5 h-5 text-cyan-200" />
+                  <span>✨ 바이브웨이브 마스터 프롬프트 생성하기</span>
                 </>
               )}
             </button>
 
             {/* Generated Output Display */}
             {generatedResult && (
-              <div className="mt-10 pt-8 border-t border-white/10 space-y-6 animate-fadeIn">
+              <div className="mt-10 pt-8 border-t border-blue-500/20 space-y-6 animate-fadeIn">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <span className="w-3 h-3 rounded-full bg-emerald-400 animate-pulse" />
+                    <span className="w-3 h-3 rounded-full bg-cyan-400 animate-pulse" />
                     <h3 className="text-base sm:text-lg font-bold text-white">
                       생성된 마스터 프롬프트 (Ready to Paste)
                     </h3>
@@ -363,7 +361,7 @@ components/
 
                   <button
                     onClick={copyToClipboard}
-                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-xs font-bold shadow-lg shadow-purple-900/30 transition cursor-pointer"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white text-xs font-bold shadow-lg shadow-blue-900/40 transition cursor-pointer"
                   >
                     {copied ? (
                       <>
@@ -380,7 +378,7 @@ components/
                 </div>
 
                 {/* Prompt Codebox */}
-                <div className="relative rounded-2xl bg-[#070912] border border-purple-500/30 p-5 font-mono text-xs text-slate-300 leading-relaxed overflow-x-auto shadow-inner">
+                <div className="relative rounded-2xl bg-[#030814] border border-blue-500/40 p-5 font-mono text-xs text-slate-300 leading-relaxed overflow-x-auto shadow-inner">
                   <pre className="whitespace-pre-wrap select-all font-mono">
                     {generatedResult.prompt}
                   </pre>
@@ -388,7 +386,7 @@ components/
 
                 {/* Extra Guide: Tech Stack & Steps */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="p-4 rounded-xl bg-white/[0.03] border border-white/10">
+                  <div className="p-4 rounded-xl bg-blue-950/20 border border-blue-500/20">
                     <h4 className="text-xs font-bold text-cyan-300 uppercase tracking-wider mb-2 flex items-center gap-1.5">
                       <Cpu className="w-3.5 h-3.5" />
                       추천 기술 스택
@@ -402,8 +400,8 @@ components/
                     </ul>
                   </div>
 
-                  <div className="p-4 rounded-xl bg-white/[0.03] border border-white/10">
-                    <h4 className="text-xs font-bold text-purple-300 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                  <div className="p-4 rounded-xl bg-blue-950/20 border border-blue-500/20">
+                    <h4 className="text-xs font-bold text-sky-300 uppercase tracking-wider mb-2 flex items-center gap-1.5">
                       <FolderGit2 className="w-3.5 h-3.5" />
                       실행 순서 가이드
                     </h4>
